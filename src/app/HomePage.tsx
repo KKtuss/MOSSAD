@@ -64,34 +64,50 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#F5F5F0]">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/80 backdrop-blur-sm border-b border-black/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/mossad-ico.png"
-                alt="Mossad emblem"
-                width={40}
-                height={40}
-                priority
-                className="h-10 w-10 rounded-full object-contain"
-              />
-              <div className="text-3xl font-bold font-chub">MOSSAD</div>
-            </div>
-            <div className="hidden md:flex gap-6 text-sm">
-              <a href="#" className="hover:opacity-70">
-                Build
-              </a>
-              <a href="#" className="hover:opacity-70">
-                Events
-              </a>
-              <a href="#" className="hover:opacity-70">
-                Media
-              </a>
-            </div>
+        <div className="w-full px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/mossad-ico.png"
+              alt="Mossad emblem"
+              width={40}
+              height={40}
+              priority
+              className="h-10 w-10 rounded-full object-contain"
+            />
+            <div className="text-3xl font-bold font-chub">MOSSAD</div>
           </div>
-          <button className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90">
-            Explore Testnet
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://pump.fun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
+              title="pump.fun"
+            >
+              P
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
+              title="X/Twitter"
+            >
+              X
+            </a>
+            <a
+              href="https://dexscreener.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
+              title="DexScreener"
+            >
+              D
+            </a>
+            <button className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full">
+              Claim Airdrop
+            </button>
+          </div>
         </div>
       </nav>
 
