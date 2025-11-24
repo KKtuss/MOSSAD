@@ -390,11 +390,10 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16">Onchain — And IRL.</h2>
 
           <div className="space-y-4 sm:space-y-6">
-            <div className="hidden sm:grid grid-cols-4 gap-4 text-xs font-mono text-gray-500 pb-4 border-b border-gray-300">
+            <div className="hidden sm:grid grid-cols-3 gap-4 text-xs font-mono text-gray-500 pb-4 border-b border-gray-300">
               <div>DATE</div>
               <div>EVENT</div>
               <div>LOCATION</div>
-              <div>DESCRIPTION</div>
             </div>
 
             {[
@@ -431,7 +430,7 @@ export default function HomePage() {
             ].map((event, i) => (
               <div
                 key={i}
-                className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 py-4 sm:py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:translate-x-2"
+                className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:translate-x-2"
               >
                 <div className="text-xs sm:text-sm whitespace-pre-line">
                   <span className="sm:hidden font-mono text-gray-500">DATE: </span>
@@ -444,10 +443,6 @@ export default function HomePage() {
                 <div className="text-xs sm:text-sm text-gray-600">
                   <span className="sm:hidden font-mono text-gray-500">LOCATION: </span>
                   {event.location}
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600">
-                  <span className="sm:hidden font-mono text-gray-500">DESCRIPTION: </span>
-                  {event.desc}
                 </div>
               </div>
             ))}
