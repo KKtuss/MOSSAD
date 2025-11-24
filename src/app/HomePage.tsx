@@ -215,9 +215,9 @@ export default function HomePage() {
         </div>
 
         {/* Images above video */}
-        <section className="py-4 sm:py-6 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 sm:gap-8">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex-shrink-0">
+        <section className="py-2 sm:py-3 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
+            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0">
               <Image
                 src="/images/Epstein.png"
                 alt="Epstein"
@@ -226,7 +226,7 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex-shrink-0">
+            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0">
               <Image
                 src="/images/netanyahu.png"
                 alt="Netanyahu"
