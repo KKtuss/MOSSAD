@@ -399,10 +399,10 @@ export default function HomePage() {
 
             {[
               {
-                date: "Nov 29,\n2025",
-                event: "MOSSAD Blitz @ 上海",
-                location: "TBD",
-                desc: "MOSSAD Blitz 第1场深圳场，充满活力...",
+                date: "Sep 11,\n2001",
+                event: "MOSSAD flash US Meetup",
+                location: "New-York",
+                desc: "",
               },
               {
                 date: "Nov 29,\n2025",
