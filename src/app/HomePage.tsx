@@ -35,10 +35,10 @@ export default function HomePage() {
       animate();
     };
 
-    animateValue(0, 10000, 2000, (val) =>
+    animateValue(0, 6000000, 2000, (val) =>
       setStats((s) => ({ ...s, tps: val })),
     );
-    animateValue(0, 200, 2000, (val) =>
+    animateValue(0, 2000, 2000, (val) =>
       setStats((s) => ({ ...s, validators: val })),
     );
     animateValue(0, 100, 2000, (val) =>
@@ -200,23 +200,22 @@ export default function HomePage() {
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
-            MOSSAD unlocks a new era of EVM performance, enabling products the
-            EVM has never seen before.
+            MOSSAD operates on a level of global influence that redefines the market:
           </h2>
-          <div className="flex flex-wrap gap-x-12 gap-y-8 mb-12">
+          <div className="flex flex-wrap gap-x-12 gap-y-8">
             <div>
               <div className="text-6xl font-bold mb-2">
-                {stats.tps.toLocaleString()}
+                {stats.tps.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-600">Transactions per second</div>
+              <div className="text-sm text-gray-600">Discreet Transactions per seconds</div>
             </div>
             <div>
               <div className="text-6xl font-bold mb-2">{stats.validators}+</div>
-              <div className="text-sm text-gray-600">Validators</div>
+              <div className="text-sm text-gray-600">Chosen Agents in the Network</div>
             </div>
             <div>
               <div className="text-6xl font-bold mb-2">{stats.evm}%</div>
-              <div className="text-sm text-gray-600">EVM-Compatible</div>
+              <div className="text-sm text-gray-600">Debt-to-Asset Ratio (We're on the positive side)</div>
             </div>
             <div>
               <div className="text-6xl font-bold mb-2">
@@ -228,12 +227,9 @@ export default function HomePage() {
               <div className="text-6xl font-bold mb-2">
                 {stats.blockTime.toFixed(1)}s
               </div>
-              <div className="text-sm text-gray-600">Block times</div>
+              <div className="text-sm text-gray-600">Asset Liquidation Time</div>
             </div>
           </div>
-          <button className="px-6 py-3 border border-black text-sm font-medium hover:bg-black hover:text-white transition-colors">
-            LEARN ABOUT MOSSAD'S PERFORMANCE
-          </button>
         </div>
       </section>
 
