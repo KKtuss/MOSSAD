@@ -13,6 +13,7 @@ export default function HomePage() {
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
+  const [indicatorFading, setIndicatorFading] = useState(false);
 
   useEffect(() => {
     const animateValue = (
@@ -61,6 +62,20 @@ export default function HomePage() {
       true,
     );
   }, []);
+
+  useEffect(() => {
+    if (showIndicator) {
+      const fadeTimer = setTimeout(() => {
+        setIndicatorFading(true);
+        setTimeout(() => {
+          setShowIndicator(false);
+          setIndicatorFading(false);
+        }, 500); // Fade duration
+      }, 6000); // Show for 6 seconds
+
+      return () => clearTimeout(fadeTimer);
+    }
+  }, [showIndicator]);
 
   return (
     <div className="min-h-screen bg-[#F5F5F0]">
@@ -374,12 +389,14 @@ export default function HomePage() {
 
       {/* Bottom Indicator */}
       {showIndicator && (
-        <div className="fixed bottom-0 left-0 right-0 z-[100] bg-[#F5F5F0] border-t border-black/10 p-6 shadow-lg">
-          <div className="max-w-6xl mx-auto text-center">
-            <p className="text-lg text-gray-700 font-sebino">
-              900$ MOSSAD ? What do you even need 800$ MOSSAD for ?
-            </p>
-          </div>
+        <div 
+          className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[100] bg-[#F5F5F0]/80 backdrop-blur-sm border border-black/10 rounded-full px-8 py-4 shadow-lg transition-opacity duration-500 ${
+            indicatorFading ? 'opacity-0' : 'opacity-100'
+          }`}
+        >
+          <p className="text-lg text-gray-700 font-sebino whitespace-nowrap">
+            900$ MOSSAD ? What do you even need 800$ MOSSAD for ?
+          </p>
         </div>
       )}
 
