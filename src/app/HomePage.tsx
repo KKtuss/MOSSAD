@@ -398,12 +398,6 @@ export default function HomePage() {
 
             {[
               {
-                date: "Dec 13,\n2025",
-                event: "MOSSAD Blitz Pune",
-                location: "Pune, Maharashtra",
-                desc: "",
-              },
-              {
                 date: "Sep 11,\n2001",
                 event: "MOSSAD flash US Meetup",
                 location: "New-York",
@@ -419,12 +413,6 @@ export default function HomePage() {
                 date: "Jun 8,\n1967",
                 event: "USS Liberty Meetup",
                 location: "Sinai Peninsula",
-                desc: "",
-              },
-              {
-                date: "Dec 06,\n2025",
-                event: "MOSSAD Blitz San Francisco: x402 Edition",
-                location: "San Francisco, California",
                 desc: "",
               },
             ].map((event, i) => (
