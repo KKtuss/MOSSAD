@@ -219,7 +219,7 @@ export default function HomePage() {
       <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 mt-4 sm:-mt-32 md:-mt-40">
         <div className="w-full flex items-end justify-between">
           <div 
-            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6 drop-shadow-lg fade-in-left ${visibleSections.has("image-left") ? "visible" : ""}`}
+            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-6 sm:-ml-4 md:-ml-6 drop-shadow-lg fade-in-left ${visibleSections.has("image-left") ? "visible" : ""}`}
             data-section-id="image-left"
             ref={(el: HTMLElement | null) => {
               sectionRefs.current["image-left"] = el;
@@ -234,7 +234,7 @@ export default function HomePage() {
             />
           </div>
           <div 
-            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6 drop-shadow-lg fade-in-right ${visibleSections.has("image-right") ? "visible" : ""}`}
+            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-6 sm:-mr-4 md:-mr-6 drop-shadow-lg fade-in-right ${visibleSections.has("image-right") ? "visible" : ""}`}
             data-section-id="image-right"
             ref={(el: HTMLElement | null) => {
               sectionRefs.current["image-right"] = el;
