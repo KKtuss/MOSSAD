@@ -137,9 +137,9 @@ export default function HomePage() {
               width={40}
               height={40}
               priority
-              className="h-10 w-10 rounded-full object-contain transition-transform duration-300 hover:scale-110"
+              className="h-10 w-10 rounded-full object-contain"
             />
-            <div className="text-3xl font-bold font-chub transition-transform duration-300 hover:scale-105">MOSSAD</div>
+            <div className="text-3xl font-bold font-chub">MOSSAD</div>
           </div>
           <div className="flex items-center gap-3">
             <a
@@ -265,8 +265,8 @@ export default function HomePage() {
           >
             <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
-                src="/images/hannukah.png"
-                alt="Hanukkah schematic"
+                src="/images/David.png"
+                alt="Star of David"
                 fill
                 className="object-contain opacity-90"
                 priority

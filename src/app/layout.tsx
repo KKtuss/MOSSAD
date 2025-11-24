@@ -19,9 +19,9 @@ const chubGothic = localFont({
   display: "swap",
 });
 
-const coolvetica = localFont({
-  src: "../fonts/CoolveticaRg-Regular.ttf",
-  variable: "--font-coolvetica",
+const font1955 = localFont({
+  src: "../fonts/1955 Medium.otf",
+  variable: "--font-1955",
   display: "swap",
 });
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${chubGothic.variable} ${coolvetica.variable} ${sebino.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${chubGothic.variable} ${font1955.variable} ${sebino.variable}`}
     >
       <body className="antialiased">{children}</body>
     </html>
