@@ -532,7 +532,7 @@ export default function HomePage() {
           }`}
         >
           <p className="text-sm sm:text-lg text-gray-700 font-sebino text-center">
-            900 $MOSSAD ? What do you even need 800 $MOSSAD for ?
+            1000 $MOSSAD ? What do you even need 100 $MOSSAD for ?
           </p>
         </div>
       )}
