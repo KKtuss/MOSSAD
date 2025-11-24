@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Images above video */}
-      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-2 border-b border-gray-400/30">
+      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-2">
         <div className="w-full flex items-end justify-between">
           <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
             <Image
@@ -237,6 +237,7 @@ export default function HomePage() {
             />
           </div>
         </div>
+        <div className="w-screen border-b border-gray-400/30 -mx-4 sm:-mx-6"></div>
       </section>
 
       {/* Hero Video */}
