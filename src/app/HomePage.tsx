@@ -214,6 +214,30 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Images above video */}
+        <section className="py-4 sm:py-6 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 sm:gap-8">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex-shrink-0">
+              <Image
+                src="/images/Epstein.png"
+                alt="Epstein"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
+            </div>
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex-shrink-0">
+              <Image
+                src="/images/netanyahu.png"
+                alt="Netanyahu"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Hero Video */}
         <section 
           className={`py-4 sm:py-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
