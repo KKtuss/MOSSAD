@@ -215,7 +215,7 @@ export default function HomePage() {
         </div>
 
         {/* Images above video */}
-        <section className="p-0 m-0">
+        <section className="dotted-pattern pt-4 sm:pt-6 px-4 sm:px-6 pb-0 mb-0">
           <div className="w-full flex items-center justify-between">
             <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
               <Image
@@ -240,7 +240,7 @@ export default function HomePage() {
 
         {/* Hero Video */}
         <section 
-          className={`p-0 m-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
+          className={`mt-0 pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
           data-section-id="hero-video"
           ref={(el: HTMLElement | null) => {
             sectionRefs.current["hero-video"] = el;
