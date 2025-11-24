@@ -136,7 +136,7 @@ export default function HomePage() {
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
                 fill
-                className="object-contain opacity-80 mix-blend-screen"
+                className="object-contain opacity-90"
                 priority
               />
             </div>
