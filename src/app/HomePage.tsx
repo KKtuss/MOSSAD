@@ -99,6 +99,9 @@ export default function HomePage() {
       }
     );
 
+    // Store observed elements to properly clean them up
+    const observedElements: (HTMLElement | HTMLDivElement)[] = [];
+
     // Wait a bit for refs to be set, then observe
     const timeoutId = setTimeout(() => {
       // Capture refs at the time of observation
@@ -106,6 +109,7 @@ export default function HomePage() {
       currentRefs.forEach((ref) => {
         if (ref) {
           observer.observe(ref);
+          observedElements.push(ref);
           // Check if already in view
           const rect = ref.getBoundingClientRect();
           const isInView = rect.top < window.innerHeight && rect.bottom > 0;
@@ -121,10 +125,9 @@ export default function HomePage() {
 
     return () => {
       clearTimeout(timeoutId);
-      // Capture refs at cleanup time to avoid stale closure
-      const currentRefs = Object.values(sectionRefs.current);
-      currentRefs.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
+      // Use stored observed elements for cleanup
+      observedElements.forEach((ref) => {
+        observer.unobserve(ref);
       });
     };
   }, []);
@@ -191,7 +194,9 @@ export default function HomePage() {
         <div 
           className={`dotted-pattern fade-in-up ${visibleSections.has("hero-text") ? "visible" : ""}`}
           data-section-id="hero-text"
-          ref={(el: HTMLDivElement | null) => (sectionRefs.current["hero-text"] = el)}
+          ref={(el: HTMLDivElement | null) => {
+            sectionRefs.current["hero-text"] = el;
+          }}
         >
           <div className="max-w-5xl mx-auto px-6 py-8">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
@@ -213,7 +218,9 @@ export default function HomePage() {
         <section 
           className={`py-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
           data-section-id="hero-video"
-          ref={(el: HTMLElement | null) => (sectionRefs.current["hero-video"] = el)}
+          ref={(el: HTMLElement | null) => {
+            sectionRefs.current["hero-video"] = el;
+          }}
         >
           <div>
             <video
@@ -231,7 +238,9 @@ export default function HomePage() {
           <div 
             className={`dotted-pattern flex items-center justify-center p-12 fade-in-left ${visibleSections.has("section-1-text") ? "visible" : ""}`}
             data-section-id="section-1-text"
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-text"] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              sectionRefs.current["section-1-text"] = el;
+            }}
           >
             <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
@@ -246,7 +255,9 @@ export default function HomePage() {
           <div 
             className={`dotted-pattern flex items-center justify-center p-12 fade-in-right ${visibleSections.has("section-1-image") ? "visible" : ""}`}
             data-section-id="section-1-image"
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-image"] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              sectionRefs.current["section-1-image"] = el;
+            }}
           >
             <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
@@ -265,7 +276,9 @@ export default function HomePage() {
           <div 
             className={`dotted-pattern flex items-center justify-center p-12 order-2 md:order-1 fade-in-left ${visibleSections.has("section-2-image") ? "visible" : ""}`}
             data-section-id="section-2-image"
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-image"] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              sectionRefs.current["section-2-image"] = el;
+            }}
           >
             <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
@@ -280,7 +293,9 @@ export default function HomePage() {
           <div 
             className={`dotted-pattern flex items-center justify-center p-12 order-1 md:order-2 fade-in-right ${visibleSections.has("section-2-text") ? "visible" : ""}`}
             data-section-id="section-2-text"
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-text"] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              sectionRefs.current["section-2-text"] = el;
+            }}
           >
             <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
@@ -298,7 +313,9 @@ export default function HomePage() {
       <section 
         className={`py-16 px-6 fade-in-up ${visibleSections.has("metrics") ? "visible" : ""}`}
         data-section-id="metrics"
-        ref={(el: HTMLElement | null) => (sectionRefs.current["metrics"] = el)}
+        ref={(el: HTMLElement | null) => {
+          sectionRefs.current["metrics"] = el;
+        }}
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
@@ -339,7 +356,9 @@ export default function HomePage() {
       <section 
         className={`relative py-16 px-6 overflow-hidden fade-in ${visibleSections.has("dark-section") ? "visible" : ""}`}
         data-section-id="dark-section"
-        ref={(el: HTMLElement | null) => (sectionRefs.current["dark-section"] = el)}
+        ref={(el: HTMLElement | null) => {
+          sectionRefs.current["dark-section"] = el;
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
@@ -362,7 +381,9 @@ export default function HomePage() {
       <section 
         className={`py-16 px-6 fade-in-up ${visibleSections.has("events") ? "visible" : ""}`}
         data-section-id="events"
-        ref={(el: HTMLElement | null) => (sectionRefs.current["events"] = el)}
+        ref={(el: HTMLElement | null) => {
+          sectionRefs.current["events"] = el;
+        }}
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-4">The MOSSAD Community is</h2>
