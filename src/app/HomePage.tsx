@@ -215,9 +215,9 @@ export default function HomePage() {
         </div>
 
         {/* Images above video */}
-        <section className="pb-0 px-0">
+        <section className="p-0 m-0">
           <div className="w-full flex items-center justify-between">
-            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
+            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
               <Image
                 src="/images/Epstein.png"
                 alt="Epstein"
@@ -226,7 +226,7 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6">
+            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6">
               <Image
                 src="/images/netanyahu.png"
                 alt="Netanyahu"
@@ -240,7 +240,7 @@ export default function HomePage() {
 
         {/* Hero Video */}
         <section 
-          className={`pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
+          className={`p-0 m-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
           data-section-id="hero-video"
           ref={(el: HTMLElement | null) => {
             sectionRefs.current["hero-video"] = el;
