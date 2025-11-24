@@ -95,15 +95,6 @@ export default function HomePage() {
             >
               X
             </a>
-            <a
-              href="https://dexscreener.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
-              title="DexScreener"
-            >
-              D
-            </a>
             <button className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full">
               Claim Airdrop
             </button>
@@ -237,58 +228,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Rolling Text */}
-      <section className="py-12 overflow-hidden bg-white">
-        <div className="flex animate-scroll">
-          <div className="flex whitespace-nowrap">
-            <span className="inline-block px-4 text-sm font-mono">
-              EVM Addresses
-            </span>
-            <span className="inline-block px-4 text-sm font-mono">Wallets</span>
-            <span className="inline-block px-4 text-sm font-mono">Security</span>
-            <span className="inline-block px-4 text-sm font-mono">
-              Smart Contracts
-            </span>
-            <span className="inline-block px-4 text-sm font-mono">Research</span>
-            <span className="inline-block px-4 text-sm font-mono">
-              Tools & Services
-            </span>
-          </div>
-          <div className="flex whitespace-nowrap">
-            <span className="inline-block px-4 text-sm font-mono">
-              EVM Addresses
-            </span>
-            <span className="inline-block px-4 text-sm font-mono">Wallets</span>
-            <span className="inline-block px-4 text-sm font-mono">Security</span>
-            <span className="inline-block px-4 text-sm font-mono">
-              Smart Contracts
-            </span>
-            <span className="inline-block px-4 text-sm font-mono">Research</span>
-            <span className="inline-block px-4 text-sm font-mono">
-              Tools & Services
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Node Section */}
-      <section className="py-32 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-5xl font-bold leading-tight mb-8">
-              Run a node.
-              <br />
-              Join the network.
-            </h2>
-          </div>
-          <div className="flex flex-col justify-center space-y-6 text-sm font-mono text-gray-600">
-            <div>/ MOSSAD DB</div>
-            <div>/ HUNDREDS OF VALIDATORS</div>
-            <div>/ SCALABLE DECENTRALIZATION</div>
-          </div>
-        </div>
-      </section>
-
       {/* Dark Gradient Section */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
@@ -368,65 +307,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-20 px-6 border-t border-gray-300">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h3 className="text-2xl font-bold mb-4">
-              Subscribe to the Newsletter
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Stay up to date with the latest news, announcements and events.
-            </p>
-            <button className="px-6 py-3 border border-black text-sm font-medium hover:bg-black hover:text-white transition-colors">
-              SUBSCRIBE TO MOSSAD MEMO
-            </button>
-          </div>
-          <div className="grid grid-cols-2 gap-8 text-sm">
-            <div className="space-y-3">
-              <a href="#" className="block hover:opacity-70">
-                HOME
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                EVENTS
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                MOSSAD MEDIA
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                ANNOUNCEMENTS
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                BLOG POSTS
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                INSTITUTIONS
-              </a>
-            </div>
-            <div className="space-y-3">
-              <a href="#" className="block hover:opacity-70">
-                BUILD
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                DOCUMENTATION
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                INFRA DIRECTORY
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                BLOCK EXPLORER
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                GMOSSADS
-              </a>
-              <a href="#" className="block hover:opacity-70">
-                RESEARCH FORUM
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-gray-300">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -440,50 +320,10 @@ export default function HomePage() {
             <a href="#" className="text-sm hover:opacity-70">
               TERMS OF SERVICE →
             </a>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-xs"
-              >
-                X
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-xs"
-              >
-                D
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-xs"
-              >
-                Y
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-xs"
-              >
-                L
-              </a>
-            </div>
           </div>
         </div>
       </footer>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-          display: inline-block;
-        }
-      `}</style>
     </div>
   );
 }
