@@ -198,7 +198,7 @@ export default function HomePage() {
             sectionRefs.current["hero-text"] = el;
           }}
         >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
