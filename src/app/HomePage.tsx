@@ -158,6 +158,33 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* Duplicated section with inverted positions */}
+        <div className="grid md:grid-cols-2 min-h-[60vh]">
+          <div className="dotted-pattern flex items-center justify-center p-12 order-2 md:order-1">
+            <div className="relative w-72 h-72 md:w-96 md:h-96">
+              <Image
+                src="/images/hannukah.png"
+                alt="Hanukkah schematic"
+                fill
+                className="object-contain opacity-90"
+                priority
+              />
+            </div>
+          </div>
+          <div className="dotted-pattern flex items-center justify-center p-12 order-1 md:order-2">
+            <div className="max-w-xl">
+              <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+                Fast, familiar, frictionless
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                No more high fees or long waits. Apps on MOSSAD feel instant,
+                cost pennies, and work with the wallets and tools you already
+                know and love.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Hero Video */}
