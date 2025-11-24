@@ -389,6 +389,12 @@ export default function HomePage() {
               </div>
               <div className="text-xs sm:text-sm text-gray-600">Asset Liquidation Time</div>
             </div>
+            <div className="transition-transform duration-300 hover:scale-105">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+                33,000+
+              </div>
+              <div className="text-xs sm:text-sm text-gray-600">Epstein Files Pages</div>
+            </div>
           </div>
         </div>
       </section>
