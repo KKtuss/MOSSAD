@@ -81,19 +81,31 @@ export default function HomePage() {
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
+              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
               title="pump.fun"
             >
-              P
+              <Image
+                src="/images/pump-button.png"
+                alt="Pump.fun"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full object-contain"
+              />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-xs font-medium hover:bg-black/90 transition-colors"
+              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
               title="X/Twitter"
             >
-              X
+              <Image
+                src="/images/x-logo.png"
+                alt="X/Twitter"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full object-contain"
+              />
             </a>
             <button className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full">
               Claim Airdrop
