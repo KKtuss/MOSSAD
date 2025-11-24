@@ -137,7 +137,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="dotted-pattern flex items-center justify-center p-12">
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem]">
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -152,7 +152,7 @@ export default function HomePage() {
         {/* Duplicated section with inverted positions */}
         <div className="grid md:grid-cols-2 min-h-[60vh]">
           <div className="dotted-pattern flex items-center justify-center p-12 order-2 md:order-1">
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem]">
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
