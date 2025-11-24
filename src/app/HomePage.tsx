@@ -415,6 +415,12 @@ export default function HomePage() {
                 location: "Little Saint James Island",
                 desc: "",
               },
+              {
+                date: "Sep 10,\n2025",
+                event: "Elite Shooter Public Training",
+                location: "Losee Center",
+                desc: "",
+              },
             ].map((event, i) => (
               <div
                 key={i}
