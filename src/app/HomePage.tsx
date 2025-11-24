@@ -15,7 +15,7 @@ export default function HomePage() {
   const [showIndicator, setShowIndicator] = useState(false);
   const [indicatorFading, setIndicatorFading] = useState(false);
   // Make hero section visible by default since it's always in view on load
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video"]));
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video", "image-left", "image-right"]));
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   useEffect(() => {
@@ -218,7 +218,13 @@ export default function HomePage() {
       {/* Images above video */}
       <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-20 sm:-mt-32 md:-mt-40">
         <div className="w-full flex items-end justify-between">
-          <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6 drop-shadow-lg">
+          <div 
+            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6 drop-shadow-lg fade-in-left ${visibleSections.has("image-left") ? "visible" : ""}`}
+            data-section-id="image-left"
+            ref={(el: HTMLElement | null) => {
+              sectionRefs.current["image-left"] = el;
+            }}
+          >
             <Image
               src="/images/Epstein.png"
               alt="Epstein"
@@ -227,7 +233,13 @@ export default function HomePage() {
               priority
             />
           </div>
-          <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6 drop-shadow-lg">
+          <div 
+            className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6 drop-shadow-lg fade-in-right ${visibleSections.has("image-right") ? "visible" : ""}`}
+            data-section-id="image-right"
+            ref={(el: HTMLElement | null) => {
+              sectionRefs.current["image-right"] = el;
+            }}
+          >
             <Image
               src="/images/netanyahu.png"
               alt="Netanyahu"
