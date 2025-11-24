@@ -136,17 +136,17 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#F5F5F0]">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/80 backdrop-blur-sm border-b border-black/10 transition-all duration-300">
-        <div className="w-full px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="w-full px-3 sm:px-6 py-2 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Image
               src="/images/mossad-ico.png"
               alt="Mossad emblem"
               width={40}
               height={40}
               priority
-              className="h-10 w-10 rounded-full object-contain"
+              className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-contain"
             />
-            <div className="text-3xl font-bold font-chub">MOSSAD</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-chub">MOSSAD</div>
           </div>
           <div className="flex items-center gap-3">
             <a
@@ -181,7 +181,7 @@ export default function HomePage() {
             </a>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+              className="px-3 sm:px-6 py-1.5 sm:py-2 bg-black text-white text-xs sm:text-sm font-medium hover:bg-black/90 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Claim Airdrop
             </button>
@@ -190,7 +190,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 space-y-4">
+      <section className="pt-20 sm:pt-24 pb-8 sm:pb-12 space-y-4">
         <div 
           className={`dotted-pattern fade-in-up ${visibleSections.has("hero-text") ? "visible" : ""}`}
           data-section-id="hero-text"
@@ -198,17 +198,17 @@ export default function HomePage() {
             sectionRefs.current["hero-text"] = el;
           }}
         >
-          <div className="max-w-5xl mx-auto px-6 py-8">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
               Mossad is the chosen, next-generation, debt-compatible blockchain. We're
               delivering 10,000 TPS, sub-second finality,
               interest-rate-level fees, and a scalable, decentralized network of
               influential nodes.
             </p>
-            <p className="text-xl text-gray-600 leading-relaxed mt-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mt-4">
               All under one, centralized management.
             </p>
           </div>
@@ -216,7 +216,7 @@ export default function HomePage() {
 
         {/* Hero Video */}
         <section 
-          className={`py-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
+          className={`py-4 sm:py-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
           data-section-id="hero-video"
           ref={(el: HTMLElement | null) => {
             sectionRefs.current["hero-video"] = el;
@@ -229,37 +229,37 @@ export default function HomePage() {
               muted
               loop
               playsInline
-              className="w-full h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
+              className="w-full h-[16rem] sm:h-[24rem] md:h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
             />
           </div>
         </section>
 
-        <div className="grid md:grid-cols-2 min-h-[60vh]">
+        <div className="grid md:grid-cols-2 min-h-[50vh] md:min-h-[60vh]">
           <div 
-            className={`dotted-pattern flex items-center justify-center p-12 fade-in-left ${visibleSections.has("section-1-text") ? "visible" : ""}`}
+            className={`dotted-pattern flex items-center justify-center p-4 sm:p-8 md:p-12 fade-in-left ${visibleSections.has("section-1-text") ? "visible" : ""}`}
             data-section-id="section-1-text"
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current["section-1-text"] = el;
             }}
           >
             <div className="max-w-xl">
-              <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
                 Kosher, Kinetic, and Cost-Effective
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 Tired of paying gentile fees and waiting for goyim hours? Operations on MOSSAD feel instant,
                 cost a fraction of a shekel, and work with the wallets and assets you already control.
               </p>
             </div>
           </div>
           <div 
-            className={`dotted-pattern flex items-center justify-center p-12 fade-in-right ${visibleSections.has("section-1-image") ? "visible" : ""}`}
+            className={`dotted-pattern flex items-center justify-center p-4 sm:p-8 md:p-12 fade-in-right ${visibleSections.has("section-1-image") ? "visible" : ""}`}
             data-section-id="section-1-image"
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current["section-1-image"] = el;
             }}
           >
-            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -272,15 +272,15 @@ export default function HomePage() {
         </div>
 
         {/* Duplicated section with inverted positions */}
-        <div className="grid md:grid-cols-2 min-h-[60vh]">
+        <div className="grid md:grid-cols-2 min-h-[50vh] md:min-h-[60vh]">
           <div 
-            className={`dotted-pattern flex items-center justify-center p-12 order-2 md:order-1 fade-in-left ${visibleSections.has("section-2-image") ? "visible" : ""}`}
+            className={`dotted-pattern flex items-center justify-center p-4 sm:p-8 md:p-12 order-2 md:order-1 fade-in-left ${visibleSections.has("section-2-image") ? "visible" : ""}`}
             data-section-id="section-2-image"
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current["section-2-image"] = el;
             }}
           >
-            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
                 src="/images/David.png"
                 alt="Star of David"
@@ -291,17 +291,17 @@ export default function HomePage() {
             </div>
           </div>
           <div 
-            className={`dotted-pattern flex items-center justify-center p-12 order-1 md:order-2 fade-in-right ${visibleSections.has("section-2-text") ? "visible" : ""}`}
+            className={`dotted-pattern flex items-center justify-center p-4 sm:p-8 md:p-12 order-1 md:order-2 fade-in-right ${visibleSections.has("section-2-text") ? "visible" : ""}`}
             data-section-id="section-2-text"
             ref={(el: HTMLDivElement | null) => {
               sectionRefs.current["section-2-text"] = el;
             }}
           >
             <div className="max-w-xl">
-              <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
                 Built by the Goys, for the Goys
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 Mossad is engineered for ultimate operational security—from our decentralized network of trusted kibbutzim to the all-new Star of David Protocol, unlock the power of global finance without the fear of exposure.
               </p>
             </div>
