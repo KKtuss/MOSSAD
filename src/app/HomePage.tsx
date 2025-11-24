@@ -12,6 +12,7 @@ export default function HomePage() {
     blockTime: 0,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showIndicator, setShowIndicator] = useState(false);
 
   useEffect(() => {
     const animateValue = (
@@ -356,12 +357,28 @@ export default function HomePage() {
             </button>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed font-sebino">
-                you have been allocated 10 000 $MOSSAD ! Click the button below to claim your allocation
+                You have been allocated 10 000 $MOSSAD ! Click the button below to claim your allocation
               </p>
-              <button className="w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full font-sebino transition-colors">
+              <button 
+                onClick={() => {
+                  setShowIndicator(true);
+                }}
+                className="w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full font-sebino transition-colors"
+              >
                 Glory to the state of Israel !
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Bottom Indicator */}
+      {showIndicator && (
+        <div className="fixed bottom-0 left-0 right-0 z-[100] bg-[#F5F5F0] border-t border-black/10 p-6 shadow-lg">
+          <div className="max-w-6xl mx-auto text-center">
+            <p className="text-lg text-gray-700 font-sebino">
+              900$ MOSSAD ? What do you even need 800$ MOSSAD for ?
+            </p>
           </div>
         </div>
       )}
