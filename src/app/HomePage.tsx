@@ -137,12 +137,11 @@ export default function HomePage() {
           <div className="dotted-pattern flex items-center justify-center p-12">
             <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
-                Fast, familiar, frictionless
+                Kosher, Kinetic, and Cost-Effective
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                No more high fees or long waits. Apps on MOSSAD feel instant,
-                cost pennies, and work with the wallets and tools you already
-                know and love.
+                Tired of paying gentile fees and waiting for goyim hours? Operations on MOSSAD feel instant,
+                cost a fraction of a shekel, and work with the wallets and assets you already control.
               </p>
             </div>
           </div>
