@@ -17,6 +17,7 @@ export default function HomePage() {
   // Make hero section visible by default since it's always in view on load
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video", "image-left", "image-right"]));
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     const animateValue = (
@@ -526,7 +527,22 @@ export default function HomePage() {
               <p className="text-lg text-gray-700 leading-relaxed font-sebino">
                 Import your blackmail and click the button below to claim your allocation.
               </p>
+              <input
+                type="file"
+                ref={fileInputRef}
+                className="hidden"
+                accept="*/*"
+                onChange={(e) => {
+                  // File selected - you can handle the file here if needed
+                  if (e.target.files && e.target.files[0]) {
+                    // File handling can be added here
+                  }
+                }}
+              />
               <button 
+                onClick={() => {
+                  fileInputRef.current?.click();
+                }}
                 className="w-full px-6 py-4 bg-gray-400 text-white text-base font-medium hover:bg-gray-500 rounded-full font-sebino transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 import your blackmail here
