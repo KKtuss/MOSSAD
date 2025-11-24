@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function HomePage() {
   const [stats, setStats] = useState({
@@ -14,6 +14,8 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
   const [indicatorFading, setIndicatorFading] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     const animateValue = (
@@ -77,10 +79,40 @@ export default function HomePage() {
     }
   }, [showIndicator]);
 
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("data-section-id");
+            if (id) {
+              setVisibleSections((prev) => new Set(prev).add(id));
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      Object.values(sectionRefs.current).forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F5F5F0]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/80 backdrop-blur-sm border-b border-black/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F0]/80 backdrop-blur-sm border-b border-black/10 transition-all duration-300">
         <div className="w-full px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
@@ -89,16 +121,16 @@ export default function HomePage() {
               width={40}
               height={40}
               priority
-              className="h-10 w-10 rounded-full object-contain"
+              className="h-10 w-10 rounded-full object-contain transition-transform duration-300 hover:scale-110"
             />
-            <div className="text-3xl font-bold font-chub">MOSSAD</div>
+            <div className="text-3xl font-bold font-chub transition-transform duration-300 hover:scale-105">MOSSAD</div>
           </div>
           <div className="flex items-center gap-3">
             <a
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
               title="pump.fun"
             >
               <Image
@@ -113,7 +145,7 @@ export default function HomePage() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
               title="X/Twitter"
             >
               <Image
@@ -126,7 +158,7 @@ export default function HomePage() {
             </a>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full"
+              className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Claim Airdrop
             </button>
@@ -136,8 +168,12 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 space-y-4">
-        <div className="dotted-pattern">
-          <div className="max-w-5xl mx-auto px-6 py-8">
+          <div 
+            className="dotted-pattern fade-in-up"
+            data-section-id="hero-text"
+            ref={(el: HTMLDivElement | null) => (sectionRefs.current["hero-text"] = el)}
+          >
+          <div className={`max-w-5xl mx-auto px-6 py-8 ${visibleSections.has("hero-text") ? "visible" : ""}`}>
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
@@ -154,20 +190,30 @@ export default function HomePage() {
         </div>
 
         {/* Hero Video */}
-        <section className="py-8">
-          <video
-            src="/videos/jew-vid.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-[28rem] object-cover"
-          />
+        <section 
+          className="py-8 fade-in"
+          data-section-id="hero-video"
+          ref={(el: HTMLElement | null) => (sectionRefs.current["hero-video"] = el)}
+        >
+          <div className={visibleSections.has("hero-video") ? "visible" : ""}>
+            <video
+              src="/videos/jew-vid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
+            />
+          </div>
         </section>
 
         <div className="grid md:grid-cols-2 min-h-[60vh]">
-          <div className="dotted-pattern flex items-center justify-center p-12">
-            <div className="max-w-xl">
+          <div 
+            className="dotted-pattern flex items-center justify-center p-12 fade-in-left"
+            data-section-id="section-1-text"
+            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-text"] = el)}
+          >
+            <div className={`max-w-xl ${visibleSections.has("section-1-text") ? "visible" : ""}`}>
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
                 Kosher, Kinetic, and Cost-Effective
               </h2>
@@ -177,8 +223,12 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="dotted-pattern flex items-center justify-center p-12">
-            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem]">
+          <div 
+            className="dotted-pattern flex items-center justify-center p-12 fade-in-right"
+            data-section-id="section-1-image"
+            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-image"] = el)}
+          >
+            <div className={`relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105 ${visibleSections.has("section-1-image") ? "visible" : ""}`}>
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -192,8 +242,12 @@ export default function HomePage() {
 
         {/* Duplicated section with inverted positions */}
         <div className="grid md:grid-cols-2 min-h-[60vh]">
-          <div className="dotted-pattern flex items-center justify-center p-12 order-2 md:order-1">
-            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem]">
+          <div 
+            className="dotted-pattern flex items-center justify-center p-12 order-2 md:order-1 fade-in-left"
+            data-section-id="section-2-image"
+            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-image"] = el)}
+          >
+            <div className={`relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105 ${visibleSections.has("section-2-image") ? "visible" : ""}`}>
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -203,8 +257,12 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <div className="dotted-pattern flex items-center justify-center p-12 order-1 md:order-2">
-            <div className="max-w-xl">
+          <div 
+            className="dotted-pattern flex items-center justify-center p-12 order-1 md:order-2 fade-in-right"
+            data-section-id="section-2-text"
+            ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-text"] = el)}
+          >
+            <div className={`max-w-xl ${visibleSections.has("section-2-text") ? "visible" : ""}`}>
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
                 Built by the Goys, for the Goys
               </h2>
@@ -217,33 +275,37 @@ export default function HomePage() {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section 
+        className="py-16 px-6 fade-in-up"
+        data-section-id="metrics"
+        ref={(el: HTMLElement | null) => (sectionRefs.current["metrics"] = el)}
+      >
+        <div className={`max-w-6xl mx-auto ${visibleSections.has("metrics") ? "visible" : ""}`}>
           <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
             MOSSAD operates on a level of global influence that redefines the market:
           </h2>
           <div className="flex flex-wrap gap-x-12 gap-y-8">
-            <div>
+            <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-6xl font-bold mb-2">
                 {stats.tps.toLocaleString()}+
               </div>
               <div className="text-sm text-gray-600">Discreet Transactions per seconds</div>
             </div>
-            <div>
+            <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-6xl font-bold mb-2">{stats.validators}+</div>
               <div className="text-sm text-gray-600">Chosen Agents in the Network</div>
             </div>
-            <div>
+            <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-6xl font-bold mb-2">{stats.evm}%</div>
               <div className="text-sm text-gray-600">Debt-to-Asset Ratio (We're on the positive side)</div>
             </div>
-            <div>
+            <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-6xl font-bold mb-2">
                 {stats.finality.toFixed(1)}s
               </div>
               <div className="text-sm text-gray-600">Finality</div>
             </div>
-            <div>
+            <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-6xl font-bold mb-2">
                 {stats.blockTime.toFixed(1)}s
               </div>
@@ -254,10 +316,14 @@ export default function HomePage() {
       </section>
 
       {/* Dark Gradient Section */}
-      <section className="relative py-16 px-6 overflow-hidden">
+      <section 
+        className="relative py-16 px-6 overflow-hidden fade-in"
+        data-section-id="dark-section"
+        ref={(el: HTMLElement | null) => (sectionRefs.current["dark-section"] = el)}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div className={`relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8 ${visibleSections.has("dark-section") ? "visible" : ""}`}>
           <h2 className="text-5xl font-bold text-white">
             Explore the Onchain World on MOSSAD
           </h2>
@@ -266,15 +332,19 @@ export default function HomePage() {
             alt="Mossad emblem"
             width={160}
             height={160}
-            className="w-40 h-40 object-contain"
+            className="w-40 h-40 object-contain transition-transform duration-500 hover:scale-110 hover:rotate-6"
             priority
           />
         </div>
       </section>
 
       {/* Community Events */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section 
+        className="py-16 px-6 fade-in-up"
+        data-section-id="events"
+        ref={(el: HTMLElement | null) => (sectionRefs.current["events"] = el)}
+      >
+        <div className={`max-w-6xl mx-auto ${visibleSections.has("events") ? "visible" : ""}`}>
           <h2 className="text-5xl font-bold mb-4">The MOSSAD Community is</h2>
           <h2 className="text-5xl font-bold mb-16">Onchain — And IRL.</h2>
 
@@ -320,7 +390,7 @@ export default function HomePage() {
             ].map((event, i) => (
               <div
                 key={i}
-                className="grid grid-cols-4 gap-4 py-6 border-b border-gray-200 hover:bg-gray-50 transition-colors"
+                className="grid grid-cols-4 gap-4 py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:translate-x-2"
               >
                 <div className="text-sm whitespace-pre-line">{event.date}</div>
                 <div className="text-sm font-medium">{event.event}</div>
@@ -339,10 +409,10 @@ export default function HomePage() {
             © 2025 MOSSAD Foundation. All rights reserved.
           </div>
           <div className="flex gap-6 items-center">
-            <a href="#" className="text-sm hover:opacity-70">
+            <a href="#" className="text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
               PRIVACY POLICY →
             </a>
-            <a href="#" className="text-sm hover:opacity-70">
+            <a href="#" className="text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
               TERMS OF SERVICE →
             </a>
           </div>
@@ -356,16 +426,16 @@ export default function HomePage() {
           onClick={() => setIsModalOpen(false)}
         >
           {/* Backdrop with blur */}
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 opacity-100" />
           
           {/* Modal Content */}
           <div 
-            className="relative z-10 dotted-pattern bg-[#F5F5F0] rounded-lg border border-black/10 shadow-2xl max-w-md w-full p-8"
-            onClick={(e) => e.stopPropagation()}
+            className="relative z-10 dotted-pattern bg-[#F5F5F0] rounded-lg border border-black/10 shadow-2xl max-w-md w-full p-8 scale-in visible"
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl font-bold leading-none"
+              className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl font-bold leading-none transition-all duration-300 hover:scale-110 active:scale-95"
               aria-label="Close"
             >
               ×
@@ -377,8 +447,9 @@ export default function HomePage() {
               <button 
                 onClick={() => {
                   setShowIndicator(true);
+                  setIsModalOpen(false);
                 }}
-                className="w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full font-sebino transition-colors"
+                className="w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full font-sebino transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 Glory to the state of Israel !
               </button>
