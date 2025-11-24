@@ -198,7 +198,7 @@ export default function HomePage() {
             sectionRefs.current["hero-text"] = el;
           }}
         >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-2 sm:pb-4 text-center">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-0 text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Images above video */}
-      <section className="dotted-pattern pt-0 sm:pt-2 px-4 sm:px-6 pb-0 mb-0">
+      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-2">
         <div className="w-full flex items-end justify-between">
           <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
             <Image
