@@ -512,7 +512,7 @@ export default function HomePage() {
           
           {/* Modal Content */}
           <div 
-            className="relative z-10 dotted-pattern bg-[#F5F5F0] rounded-lg border border-black/10 shadow-2xl max-w-md w-full p-8 scale-in visible"
+            className="relative z-10 bg-[#F5F5F0] rounded-lg border border-black/10 shadow-2xl max-w-md w-full p-8 scale-in visible"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
@@ -524,8 +524,13 @@ export default function HomePage() {
             </button>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed font-sebino">
-                You have been allocated 10 000 $MOSSAD ! Click the button below to claim your allocation
+                Import your blackmail and click the button below to claim your allocation.
               </p>
+              <button 
+                className="w-full px-6 py-4 bg-gray-400 text-white text-base font-medium hover:bg-gray-500 rounded-full font-sebino transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                import your blackmail here
+              </button>
               <button 
                 onClick={() => {
                   setShowIndicator(true);
