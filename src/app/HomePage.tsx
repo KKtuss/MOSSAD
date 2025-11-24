@@ -135,9 +135,9 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-20 space-y-4">
+      <section className="pt-12 pb-12 space-y-4">
         <div className="dotted-pattern">
-          <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="max-w-5xl mx-auto px-6 py-8">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
@@ -154,7 +154,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Video */}
-        <section className="py-20">
+        <section className="py-8">
           <video
             src="/videos/jew-vid.mp4"
             autoPlay
@@ -217,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-32 px-6">
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
             MOSSAD operates on a level of global influence that redefines the market:
@@ -254,7 +254,7 @@ export default function HomePage() {
       </section>
 
       {/* Dark Gradient Section */}
-      <section className="relative py-32 px-6 overflow-hidden">
+      <section className="relative py-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
@@ -273,7 +273,7 @@ export default function HomePage() {
       </section>
 
       {/* Community Events */}
-      <section className="py-32 px-6">
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-4">The MOSSAD Community is</h2>
           <h2 className="text-5xl font-bold mb-16">Onchain — And IRL.</h2>
@@ -333,7 +333,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-300">
+      <footer className="py-8 px-6 border-t border-gray-300">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-gray-600">
             © 2025 MOSSAD Foundation. All rights reserved.
