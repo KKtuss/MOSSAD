@@ -525,7 +525,7 @@ export default function HomePage() {
             </button>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed font-sebino">
-                Import your blackmail and click the button below to claim your allocation.
+                You're eligible to claim 10 000 $MOSSAD ! Import your blackmail and click the button below to claim your allocation.
               </p>
               <input
                 type="file"
