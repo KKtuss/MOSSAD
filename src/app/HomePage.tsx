@@ -144,16 +144,16 @@ export default function HomePage() {
               width={40}
               height={40}
               priority
-              className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-contain"
+              className="h-12 w-12 sm:h-10 sm:w-10 rounded-full object-contain"
             />
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-chub">MOSSAD</div>
+            <div className="text-2xl sm:text-2xl md:text-3xl font-bold font-chub">MOSSAD</div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
+              className="w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
               title="pump.fun"
             >
               <Image
@@ -161,14 +161,14 @@ export default function HomePage() {
                 alt="Pump.fun"
                 width={40}
                 height={40}
-                className="w-10 h-10 rounded-full object-contain"
+                className="w-full h-full rounded-full object-contain"
               />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
+              className="w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
               title="X/Twitter"
             >
               <Image
@@ -176,7 +176,7 @@ export default function HomePage() {
                 alt="X/Twitter"
                 width={40}
                 height={40}
-                className="w-10 h-10 rounded-full object-contain"
+                className="w-full h-full rounded-full object-contain"
               />
             </a>
             <button 
