@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Images above video */}
-      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-20 sm:-mt-32 md:-mt-40">
+      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 mt-4 sm:-mt-32 md:-mt-40">
         <div className="w-full flex items-end justify-between">
           <div 
             className={`relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6 drop-shadow-lg fade-in-left ${visibleSections.has("image-left") ? "visible" : ""}`}
