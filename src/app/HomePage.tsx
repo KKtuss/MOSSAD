@@ -142,8 +142,8 @@ export default function HomePage() {
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Mossad is the chosen, next-generation, debt-compatible ledger. We're
-              delivering 10,000 TPS (Trades Per Second), sub-second finality,
+              Mossad is the chosen, next-generation, debt-compatible blockchain. We're
+              delivering 10,000 TPS, sub-second finality,
               interest-rate-level fees, and a scalable, decentralized network of
               influential nodes.
             </p>
