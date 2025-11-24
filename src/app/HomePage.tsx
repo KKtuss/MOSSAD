@@ -342,7 +342,7 @@ export default function HomePage() {
                 Built by the Goys, for the Goys
               </h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                Mossad is engineered for ultimate operational security—from our decentralized network of trusted kibbutzim to the all-new Star of David Protocol, unlock the power of global finance without the fear of exposure.
+                Mossad is engineered for ultimate operational secrecy—from our decentralized network of deniable kibbutzim to the classified Star of David Protocol, we empower you to infiltrate global finance without leaving a trace. Exposure? That's for amateurs.
               </p>
             </div>
           </div>
