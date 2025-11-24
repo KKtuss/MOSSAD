@@ -543,7 +543,7 @@ export default function HomePage() {
                 onClick={() => {
                   fileInputRef.current?.click();
                 }}
-                className="w-full px-6 py-4 bg-gray-400 text-white text-base font-medium hover:bg-gray-500 rounded-full font-sebino transition-all duration-300 hover:scale-105 active:scale-95"
+                className="w-full px-4 py-2 bg-gray-400 text-white text-sm font-medium hover:bg-gray-500 rounded-full font-sebino transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 import your blackmail here
               </button>
