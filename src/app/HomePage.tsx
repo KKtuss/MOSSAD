@@ -10,6 +10,7 @@ export default function HomePage() {
     evm: 0,
     finality: 0,
     blockTime: 0,
+    epsteinFiles: 0,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
@@ -64,6 +65,9 @@ export default function HomePage() {
       2000,
       (val) => setStats((s) => ({ ...s, blockTime: val })),
       true,
+    );
+    animateValue(0, 33000, 2000, (val) =>
+      setStats((s) => ({ ...s, epsteinFiles: val })),
     );
   }, []);
 
@@ -391,7 +395,7 @@ export default function HomePage() {
             </div>
             <div className="transition-transform duration-300 hover:scale-105">
               <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
-                33,000+
+                {stats.epsteinFiles.toLocaleString()}+
               </div>
               <div className="text-xs sm:text-sm text-gray-600">Epstein Files Pages</div>
             </div>
