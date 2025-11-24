@@ -166,7 +166,7 @@ export default function HomePage() {
               />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/mossad_services"
               target="_blank"
               rel="noopener noreferrer"
               className="w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
