@@ -398,9 +398,21 @@ export default function HomePage() {
 
             {[
               {
+                date: "Dec 13,\n2025",
+                event: "MOSSAD Blitz Pune",
+                location: "Pune, Maharashtra",
+                desc: "",
+              },
+              {
                 date: "Sep 11,\n2001",
                 event: "MOSSAD flash US Meetup",
                 location: "New-York",
+                desc: "",
+              },
+              {
+                date: "1998-2019",
+                event: "VIP Political Meetings",
+                location: "Little Saint James Island",
                 desc: "",
               },
               {
@@ -410,22 +422,10 @@ export default function HomePage() {
                 desc: "",
               },
               {
-                date: "Dec 03,\n2025",
-                event: "Stablecon Salon vol 10",
-                location: "New York, New York",
-                desc: "Join us for the next edition of the...",
-              },
-              {
                 date: "Dec 06,\n2025",
                 event: "MOSSAD Blitz San Francisco: x402 Edition",
                 location: "San Francisco, California",
-                desc: "Join us for the 18th Edition of MOSSAD...",
-              },
-              {
-                date: "Dec 13,\n2025",
-                event: "MOSSAD Blitz Pune",
-                location: "Pune, Maharashtra",
-                desc: "Ready to ditch the lag and code at...",
+                desc: "",
               },
             ].map((event, i) => (
               <div
