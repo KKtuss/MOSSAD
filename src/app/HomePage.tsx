@@ -135,7 +135,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-12 pb-12 space-y-4">
+      <section className="pt-24 pb-12 space-y-4">
         <div className="dotted-pattern">
           <div className="max-w-5xl mx-auto px-6 py-8">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
