@@ -175,7 +175,7 @@ export default function HomePage() {
           <div className="dotted-pattern flex items-center justify-center p-12 order-1 md:order-2">
             <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
-                Fast, familiar, frictionless
+                Built by the Goys, for the Goys
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 No more high fees or long waits. Apps on MOSSAD feel instant,
