@@ -11,6 +11,7 @@ export default function HomePage() {
     finality: 0,
     blockTime: 0,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const animateValue = (
@@ -107,7 +108,10 @@ export default function HomePage() {
                 className="w-10 h-10 rounded-full object-contain"
               />
             </a>
-            <button className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-6 py-2 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full"
+            >
               Claim Airdrop
             </button>
           </div>
@@ -328,6 +332,39 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+          onClick={() => setIsModalOpen(false)}
+        >
+          {/* Backdrop with blur */}
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+          
+          {/* Modal Content */}
+          <div 
+            className="relative z-10 dotted-pattern bg-[#F5F5F0] rounded-lg border border-black/10 shadow-2xl max-w-md w-full p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl font-bold leading-none"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed font-sebino">
+                you have been allocated 10 000 $MOSSAD ! Click the button below to claim your allocation
+              </p>
+              <button className="w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-black/90 rounded-full font-sebino transition-colors">
+                Glory to the state of Israel !
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
