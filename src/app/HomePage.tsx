@@ -16,7 +16,7 @@ export default function HomePage() {
   const [indicatorFading, setIndicatorFading] = useState(false);
   // Make hero section visible by default since it's always in view on load
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video"]));
-  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   useEffect(() => {
     const animateValue = (
@@ -100,7 +100,7 @@ export default function HomePage() {
     );
 
     // Store observed elements to properly clean them up
-    const observedElements: (HTMLElement | HTMLDivElement)[] = [];
+    const observedElements: HTMLElement[] = [];
 
     // Wait a bit for refs to be set, then observe
     const timeoutId = setTimeout(() => {
