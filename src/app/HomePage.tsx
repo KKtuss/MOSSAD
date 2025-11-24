@@ -153,6 +153,18 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Hero Video */}
+        <section className="py-20">
+          <video
+            src="/videos/jew-vid.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-[28rem] object-cover"
+          />
+        </section>
+
         <div className="grid md:grid-cols-2 min-h-[60vh]">
           <div className="dotted-pattern flex items-center justify-center p-12">
             <div className="max-w-xl">
@@ -202,18 +214,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Hero Video */}
-      <section className="py-20">
-        <video
-          src="/videos/jew-vid.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-[28rem] object-cover"
-        />
       </section>
 
       {/* Performance Metrics */}
