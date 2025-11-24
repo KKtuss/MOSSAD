@@ -237,7 +237,7 @@ export default function HomePage() {
             />
           </div>
         </div>
-        <div className="w-screen border-b border-gray-400/30 -mx-4 sm:-mx-6"></div>
+        <div className="w-screen border-b border-black/10 -mx-4 sm:-mx-6"></div>
       </section>
 
       {/* Hero Video */}
