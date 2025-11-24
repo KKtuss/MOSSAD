@@ -205,7 +205,7 @@ export default function HomePage() {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
               Mossad is the chosen, next-generation, debt-compatible blockchain. We're
-              delivering 10,000 TPS, sub-second finality,
+              delivering 10,000 TPS (Targets per second), sub-second finality,
               interest-rate-level fees, and a scalable, decentralized network of
               influential nodes.
             </p>
