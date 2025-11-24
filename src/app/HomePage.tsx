@@ -213,51 +213,54 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Images above video */}
-        <section className="dotted-pattern pt-4 sm:pt-6 px-4 sm:px-6 pb-0 mb-0">
-          <div className="w-full flex items-end justify-between">
-            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
-              <Image
-                src="/images/Epstein.png"
-                alt="Epstein"
-                fill
-                className="object-contain rounded-lg"
-                priority
-              />
-            </div>
-            <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6">
-              <Image
-                src="/images/netanyahu.png"
-                alt="Netanyahu"
-                fill
-                className="object-contain rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Hero Video */}
-        <section 
-          className={`-mt-4 pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
-          data-section-id="hero-video"
-          ref={(el: HTMLElement | null) => {
-            sectionRefs.current["hero-video"] = el;
-          }}
-        >
-          <div className="w-full overflow-hidden">
-            <video
-              src="/videos/jew-vid.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-[16rem] sm:h-[24rem] md:h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
+      {/* Images above video */}
+      <section className="dotted-pattern pt-4 sm:pt-6 px-4 sm:px-6 pb-0 mb-0">
+        <div className="w-full flex items-end justify-between">
+          <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
+            <Image
+              src="/images/Epstein.png"
+              alt="Epstein"
+              fill
+              className="object-contain rounded-lg"
+              priority
             />
           </div>
-        </section>
+          <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -mr-2 sm:-mr-4 md:-mr-6">
+            <Image
+              src="/images/netanyahu.png"
+              alt="Netanyahu"
+              fill
+              className="object-contain rounded-lg"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
+      {/* Hero Video */}
+      <section 
+        className={`mt-0 pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
+        data-section-id="hero-video"
+        ref={(el: HTMLElement | null) => {
+          sectionRefs.current["hero-video"] = el;
+        }}
+      >
+        <div className="w-full overflow-hidden">
+          <video
+            src="/videos/jew-vid.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-[16rem] sm:h-[24rem] md:h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
+          />
+        </div>
+      </section>
+
+      {/* Content sections */}
+      <section className="space-y-4">
         <div className="grid md:grid-cols-2 min-h-[50vh] md:min-h-[60vh]">
           <div 
             className={`dotted-pattern flex items-center justify-center p-4 sm:p-8 md:p-12 fade-in-left ${visibleSections.has("section-1-text") ? "visible" : ""}`}
