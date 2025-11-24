@@ -222,7 +222,7 @@ export default function HomePage() {
             sectionRefs.current["hero-video"] = el;
           }}
         >
-          <div>
+          <div className="w-full overflow-hidden">
             <video
               src="/videos/jew-vid.mp4"
               autoPlay
@@ -311,42 +311,42 @@ export default function HomePage() {
 
       {/* Performance Metrics */}
       <section 
-        className={`py-16 px-6 fade-in-up ${visibleSections.has("metrics") ? "visible" : ""}`}
+        className={`py-8 sm:py-12 md:py-16 px-4 sm:px-6 fade-in-up ${visibleSections.has("metrics") ? "visible" : ""}`}
         data-section-id="metrics"
         ref={(el: HTMLElement | null) => {
           sectionRefs.current["metrics"] = el;
         }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 max-w-3xl leading-tight">
             MOSSAD operates on a level of global influence that redefines the market:
           </h2>
-          <div className="flex flex-wrap gap-x-12 gap-y-8">
+          <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-6 sm:gap-y-8">
             <div className="transition-transform duration-300 hover:scale-105">
-              <div className="text-6xl font-bold mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                 {stats.tps.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-600">Discreet Transactions per seconds</div>
+              <div className="text-xs sm:text-sm text-gray-600">Discreet Transactions per seconds</div>
             </div>
             <div className="transition-transform duration-300 hover:scale-105">
-              <div className="text-6xl font-bold mb-2">{stats.validators}+</div>
-              <div className="text-sm text-gray-600">Chosen Agents in the Network</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">{stats.validators}+</div>
+              <div className="text-xs sm:text-sm text-gray-600">Chosen Agents in the Network</div>
             </div>
             <div className="transition-transform duration-300 hover:scale-105">
-              <div className="text-6xl font-bold mb-2">{stats.evm}%</div>
-              <div className="text-sm text-gray-600">Debt-to-Asset Ratio (We're on the positive side)</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">{stats.evm}%</div>
+              <div className="text-xs sm:text-sm text-gray-600">Debt-to-Asset Ratio (We're on the positive side)</div>
             </div>
             <div className="transition-transform duration-300 hover:scale-105">
-              <div className="text-6xl font-bold mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                 {stats.finality.toFixed(1)}s
               </div>
-              <div className="text-sm text-gray-600">Finality</div>
+              <div className="text-xs sm:text-sm text-gray-600">Finality</div>
             </div>
             <div className="transition-transform duration-300 hover:scale-105">
-              <div className="text-6xl font-bold mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                 {stats.blockTime.toFixed(1)}s
               </div>
-              <div className="text-sm text-gray-600">Asset Liquidation Time</div>
+              <div className="text-xs sm:text-sm text-gray-600">Asset Liquidation Time</div>
             </div>
           </div>
         </div>
@@ -354,7 +354,7 @@ export default function HomePage() {
 
       {/* Dark Gradient Section */}
       <section 
-        className={`relative py-16 px-6 overflow-hidden fade-in ${visibleSections.has("dark-section") ? "visible" : ""}`}
+        className={`relative py-8 sm:py-12 md:py-16 px-4 sm:px-6 overflow-hidden fade-in ${visibleSections.has("dark-section") ? "visible" : ""}`}
         data-section-id="dark-section"
         ref={(el: HTMLElement | null) => {
           sectionRefs.current["dark-section"] = el;
@@ -362,8 +362,8 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <h2 className="text-5xl font-bold text-white">
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Explore the Onchain World on MOSSAD
           </h2>
           <Image
@@ -371,7 +371,7 @@ export default function HomePage() {
             alt="Mossad emblem"
             width={160}
             height={160}
-            className="w-40 h-40 object-contain transition-transform duration-500 hover:scale-110 hover:rotate-6"
+            className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain transition-transform duration-500 hover:scale-110 hover:rotate-6"
             priority
           />
         </div>
@@ -379,18 +379,18 @@ export default function HomePage() {
 
       {/* Community Events */}
       <section 
-        className={`py-16 px-6 fade-in-up ${visibleSections.has("events") ? "visible" : ""}`}
+        className={`py-8 sm:py-12 md:py-16 px-4 sm:px-6 fade-in-up ${visibleSections.has("events") ? "visible" : ""}`}
         data-section-id="events"
         ref={(el: HTMLElement | null) => {
           sectionRefs.current["events"] = el;
         }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4">The MOSSAD Community is</h2>
-          <h2 className="text-5xl font-bold mb-16">Onchain — And IRL.</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">The MOSSAD Community is</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16">Onchain — And IRL.</h2>
 
-          <div className="space-y-6">
-            <div className="grid grid-cols-4 gap-4 text-xs font-mono text-gray-500 pb-4 border-b border-gray-300">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="hidden sm:grid grid-cols-4 gap-4 text-xs font-mono text-gray-500 pb-4 border-b border-gray-300">
               <div>DATE</div>
               <div>EVENT</div>
               <div>LOCATION</div>
@@ -431,12 +431,24 @@ export default function HomePage() {
             ].map((event, i) => (
               <div
                 key={i}
-                className="grid grid-cols-4 gap-4 py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:translate-x-2"
+                className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-4 py-4 sm:py-6 border-b border-gray-200 hover:bg-gray-50 transition-all duration-300 hover:translate-x-2"
               >
-                <div className="text-sm whitespace-pre-line">{event.date}</div>
-                <div className="text-sm font-medium">{event.event}</div>
-                <div className="text-sm text-gray-600">{event.location}</div>
-                <div className="text-sm text-gray-600">{event.desc}</div>
+                <div className="text-xs sm:text-sm whitespace-pre-line">
+                  <span className="sm:hidden font-mono text-gray-500">DATE: </span>
+                  {event.date}
+                </div>
+                <div className="text-xs sm:text-sm font-medium">
+                  <span className="sm:hidden font-mono text-gray-500">EVENT: </span>
+                  {event.event}
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  <span className="sm:hidden font-mono text-gray-500">LOCATION: </span>
+                  {event.location}
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  <span className="sm:hidden font-mono text-gray-500">DESCRIPTION: </span>
+                  {event.desc}
+                </div>
               </div>
             ))}
           </div>
@@ -444,16 +456,16 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-300">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-sm text-gray-600">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-gray-300">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+          <div className="text-xs sm:text-sm text-gray-600">
             © 2025 MOSSAD Foundation. All rights reserved.
           </div>
-          <div className="flex gap-6 items-center">
-            <a href="#" className="text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
+          <div className="flex gap-4 sm:gap-6 items-center">
+            <a href="#" className="text-xs sm:text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
               PRIVACY POLICY →
             </a>
-            <a href="#" className="text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
+            <a href="#" className="text-xs sm:text-sm hover:opacity-70 transition-all duration-300 hover:translate-x-1">
               TERMS OF SERVICE →
             </a>
           </div>
