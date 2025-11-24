@@ -14,7 +14,8 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
   const [indicatorFading, setIndicatorFading] = useState(false);
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  // Make hero section visible by default since it's always in view on load
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video"]));
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
@@ -98,11 +99,26 @@ export default function HomePage() {
       }
     );
 
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+    // Wait a bit for refs to be set, then observe
+    const timeoutId = setTimeout(() => {
+      Object.values(sectionRefs.current).forEach((ref) => {
+        if (ref) {
+          observer.observe(ref);
+          // Check if already in view
+          const rect = ref.getBoundingClientRect();
+          const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isInView) {
+            const id = ref.getAttribute("data-section-id");
+            if (id) {
+              setVisibleSections((prev) => new Set(prev).add(id));
+            }
+          }
+        }
+      });
+    }, 100);
 
     return () => {
+      clearTimeout(timeoutId);
       Object.values(sectionRefs.current).forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
@@ -168,12 +184,12 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 space-y-4">
-          <div 
-            className="dotted-pattern fade-in-up"
-            data-section-id="hero-text"
-            ref={(el: HTMLDivElement | null) => (sectionRefs.current["hero-text"] = el)}
-          >
-          <div className={`max-w-5xl mx-auto px-6 py-8 ${visibleSections.has("hero-text") ? "visible" : ""}`}>
+        <div 
+          className={`dotted-pattern fade-in-up ${visibleSections.has("hero-text") ? "visible" : ""}`}
+          data-section-id="hero-text"
+          ref={(el: HTMLDivElement | null) => (sectionRefs.current["hero-text"] = el)}
+        >
+          <div className="max-w-5xl mx-auto px-6 py-8">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               The High-Performance Hebrew-Market-Maker-Machine.
             </h1>
@@ -191,11 +207,11 @@ export default function HomePage() {
 
         {/* Hero Video */}
         <section 
-          className="py-8 fade-in"
+          className={`py-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
           data-section-id="hero-video"
           ref={(el: HTMLElement | null) => (sectionRefs.current["hero-video"] = el)}
         >
-          <div className={visibleSections.has("hero-video") ? "visible" : ""}>
+          <div>
             <video
               src="/videos/jew-vid.mp4"
               autoPlay
@@ -209,11 +225,11 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2 min-h-[60vh]">
           <div 
-            className="dotted-pattern flex items-center justify-center p-12 fade-in-left"
+            className={`dotted-pattern flex items-center justify-center p-12 fade-in-left ${visibleSections.has("section-1-text") ? "visible" : ""}`}
             data-section-id="section-1-text"
             ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-text"] = el)}
           >
-            <div className={`max-w-xl ${visibleSections.has("section-1-text") ? "visible" : ""}`}>
+            <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
                 Kosher, Kinetic, and Cost-Effective
               </h2>
@@ -224,11 +240,11 @@ export default function HomePage() {
             </div>
           </div>
           <div 
-            className="dotted-pattern flex items-center justify-center p-12 fade-in-right"
+            className={`dotted-pattern flex items-center justify-center p-12 fade-in-right ${visibleSections.has("section-1-image") ? "visible" : ""}`}
             data-section-id="section-1-image"
             ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-1-image"] = el)}
           >
-            <div className={`relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105 ${visibleSections.has("section-1-image") ? "visible" : ""}`}>
+            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -243,11 +259,11 @@ export default function HomePage() {
         {/* Duplicated section with inverted positions */}
         <div className="grid md:grid-cols-2 min-h-[60vh]">
           <div 
-            className="dotted-pattern flex items-center justify-center p-12 order-2 md:order-1 fade-in-left"
+            className={`dotted-pattern flex items-center justify-center p-12 order-2 md:order-1 fade-in-left ${visibleSections.has("section-2-image") ? "visible" : ""}`}
             data-section-id="section-2-image"
             ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-image"] = el)}
           >
-            <div className={`relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105 ${visibleSections.has("section-2-image") ? "visible" : ""}`}>
+            <div className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] transition-transform duration-500 hover:scale-105">
               <Image
                 src="/images/hannukah.png"
                 alt="Hanukkah schematic"
@@ -258,11 +274,11 @@ export default function HomePage() {
             </div>
           </div>
           <div 
-            className="dotted-pattern flex items-center justify-center p-12 order-1 md:order-2 fade-in-right"
+            className={`dotted-pattern flex items-center justify-center p-12 order-1 md:order-2 fade-in-right ${visibleSections.has("section-2-text") ? "visible" : ""}`}
             data-section-id="section-2-text"
             ref={(el: HTMLDivElement | null) => (sectionRefs.current["section-2-text"] = el)}
           >
-            <div className={`max-w-xl ${visibleSections.has("section-2-text") ? "visible" : ""}`}>
+            <div className="max-w-xl">
               <h2 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
                 Built by the Goys, for the Goys
               </h2>
@@ -276,11 +292,11 @@ export default function HomePage() {
 
       {/* Performance Metrics */}
       <section 
-        className="py-16 px-6 fade-in-up"
+        className={`py-16 px-6 fade-in-up ${visibleSections.has("metrics") ? "visible" : ""}`}
         data-section-id="metrics"
         ref={(el: HTMLElement | null) => (sectionRefs.current["metrics"] = el)}
       >
-        <div className={`max-w-6xl mx-auto ${visibleSections.has("metrics") ? "visible" : ""}`}>
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-16 max-w-3xl leading-tight">
             MOSSAD operates on a level of global influence that redefines the market:
           </h2>
@@ -317,13 +333,13 @@ export default function HomePage() {
 
       {/* Dark Gradient Section */}
       <section 
-        className="relative py-16 px-6 overflow-hidden fade-in"
+        className={`relative py-16 px-6 overflow-hidden fade-in ${visibleSections.has("dark-section") ? "visible" : ""}`}
         data-section-id="dark-section"
         ref={(el: HTMLElement | null) => (sectionRefs.current["dark-section"] = el)}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
-        <div className={`relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8 ${visibleSections.has("dark-section") ? "visible" : ""}`}>
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <h2 className="text-5xl font-bold text-white">
             Explore the Onchain World on MOSSAD
           </h2>
@@ -340,11 +356,11 @@ export default function HomePage() {
 
       {/* Community Events */}
       <section 
-        className="py-16 px-6 fade-in-up"
+        className={`py-16 px-6 fade-in-up ${visibleSections.has("events") ? "visible" : ""}`}
         data-section-id="events"
         ref={(el: HTMLElement | null) => (sectionRefs.current["events"] = el)}
       >
-        <div className={`max-w-6xl mx-auto ${visibleSections.has("events") ? "visible" : ""}`}>
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-4">The MOSSAD Community is</h2>
           <h2 className="text-5xl font-bold mb-16">Onchain — And IRL.</h2>
 
