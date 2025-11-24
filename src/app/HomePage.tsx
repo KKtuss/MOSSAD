@@ -342,7 +342,7 @@ export default function HomePage() {
                 Built by the Goys, for the Goys
               </h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                Mossad is engineered for ultimate operational secrecy—from our decentralized network of deniable kibbutzim to the classified Star of David Protocol, we empower you to infiltrate global finance without leaving a trace. Exposure? That's for amateurs.
+                Mossad is engineered for ultimate operational secrecy-from our decentralized network of deniable kibbutzim to the classified Star of David Protocol, we empower you to infiltrate global finance without leaving a trace. Exposure? That's for amateurs.
               </p>
             </div>
           </div>
@@ -427,7 +427,7 @@ export default function HomePage() {
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">The MOSSAD Community is</h2>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16">Onchain — And IRL.</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16">Onchain - And IRL.</h2>
 
           <div className="space-y-4 sm:space-y-6">
             <div className="hidden sm:grid grid-cols-3 gap-4 text-xs font-mono text-gray-500 pb-4 border-b border-gray-300">
