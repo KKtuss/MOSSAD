@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Images above video */}
-      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-2">
+      <section className="dotted-pattern pt-0 px-4 sm:px-6 pb-0 mb-0 -mt-8 sm:-mt-12">
         <div className="w-full flex items-end justify-between">
           <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] flex-shrink-0 -ml-2 sm:-ml-4 md:-ml-6">
             <Image
@@ -242,7 +242,7 @@ export default function HomePage() {
 
       {/* Hero Video */}
       <section 
-        className={`mt-0 pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
+        className={`mt-4 sm:mt-6 pt-0 pb-4 sm:pb-8 fade-in ${visibleSections.has("hero-video") ? "visible" : ""}`}
         data-section-id="hero-video"
         ref={(el: HTMLElement | null) => {
           sectionRefs.current["hero-video"] = el;
@@ -255,7 +255,7 @@ export default function HomePage() {
             muted
             loop
             playsInline
-            className="w-full h-[16rem] sm:h-[24rem] md:h-[28rem] object-cover rounded-lg transition-transform duration-500 hover:scale-[1.02]"
+            className="w-full h-[16rem] sm:h-[24rem] md:h-[28rem] object-cover transition-transform duration-500 hover:scale-[1.02]"
           />
         </div>
       </section>
