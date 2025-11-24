@@ -177,9 +177,7 @@ export default function HomePage() {
                 Built by the Goys, for the Goys
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                No more high fees or long waits. Apps on MOSSAD feel instant,
-                cost pennies, and work with the wallets and tools you already
-                know and love.
+                Mossad is engineered for ultimate operational security—from our decentralized network of trusted kibbutzim to the all-new Star of David Protocol, unlock the power of global finance without the fear of exposure.
               </p>
             </div>
           </div>
