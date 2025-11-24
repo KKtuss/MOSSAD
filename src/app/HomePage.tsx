@@ -514,11 +514,11 @@ export default function HomePage() {
       {/* Bottom Indicator */}
       {showIndicator && (
         <div 
-          className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[100] bg-[#F5F5F0]/80 backdrop-blur-sm border border-black/10 rounded-full px-8 py-4 shadow-lg transition-opacity duration-500 ${
+          className={`fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-[100] bg-[#F5F5F0]/80 backdrop-blur-sm border border-black/10 rounded-full px-4 sm:px-8 py-3 sm:py-4 shadow-lg transition-opacity duration-500 max-w-[90vw] sm:max-w-none ${
             indicatorFading ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <p className="text-lg text-gray-700 font-sebino whitespace-nowrap">
+          <p className="text-sm sm:text-lg text-gray-700 font-sebino text-center">
             900$ MOSSAD ? What do you even need 800$ MOSSAD for ?
           </p>
         </div>
