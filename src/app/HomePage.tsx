@@ -101,7 +101,9 @@ export default function HomePage() {
 
     // Wait a bit for refs to be set, then observe
     const timeoutId = setTimeout(() => {
-      Object.values(sectionRefs.current).forEach((ref) => {
+      // Capture refs at the time of observation
+      const currentRefs = Object.values(sectionRefs.current);
+      currentRefs.forEach((ref) => {
         if (ref) {
           observer.observe(ref);
           // Check if already in view
@@ -119,7 +121,9 @@ export default function HomePage() {
 
     return () => {
       clearTimeout(timeoutId);
-      Object.values(sectionRefs.current).forEach((ref) => {
+      // Capture refs at cleanup time to avoid stale closure
+      const currentRefs = Object.values(sectionRefs.current);
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
