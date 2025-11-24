@@ -404,10 +404,10 @@ export default function HomePage() {
                 desc: "",
               },
               {
-                date: "Nov 29,\n2025",
-                event: "MOSSAD Blitz Bangalore",
-                location: "Bengaluru, Karnataka",
-                desc: "Bangalore - we heard you! MOSSAD Blitz...",
+                date: "Jun 8,\n1967",
+                event: "USS Liberty Meetup",
+                location: "Sinai Peninsula",
+                desc: "",
               },
               {
                 date: "Dec 03,\n2025",
