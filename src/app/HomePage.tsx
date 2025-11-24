@@ -398,6 +398,12 @@ export default function HomePage() {
 
             {[
               {
+                date: "Jun 8,\n1967",
+                event: "USS Liberty Meetup",
+                location: "Sinai Peninsula",
+                desc: "",
+              },
+              {
                 date: "Sep 11,\n2001",
                 event: "MOSSAD flash US Meetup",
                 location: "New-York",
@@ -407,12 +413,6 @@ export default function HomePage() {
                 date: "1998-2019",
                 event: "VIP Political Meetings",
                 location: "Little Saint James Island",
-                desc: "",
-              },
-              {
-                date: "Jun 8,\n1967",
-                event: "USS Liberty Meetup",
-                location: "Sinai Peninsula",
                 desc: "",
               },
             ].map((event, i) => (
