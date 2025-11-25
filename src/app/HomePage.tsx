@@ -155,7 +155,7 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://pump.fun"
+              href="https://pump.fun/coin/yxgudx7CQDH5VP6isCACs4aRHmhjf9RMusSw4VMpump"
               target="_blank"
               rel="noopener noreferrer"
               className="w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-all duration-300 hover:scale-110"
