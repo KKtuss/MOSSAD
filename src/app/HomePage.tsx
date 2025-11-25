@@ -510,7 +510,7 @@ export default function HomePage() {
             Partners
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center transition-all duration-300 hover:scale-105">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/Goylana-grey.png"
@@ -521,18 +521,20 @@ export default function HomePage() {
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
-            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-2 sm:mb-4 md:mb-6 lg:mb-8">
-                <Image
-                  src="/images/Jewpiter-grey.png"
-                  alt="Jewpiter"
-                  fill
-                  className="object-contain"
-                />
+            <div className="flex flex-col items-center transition-all duration-300 hover:scale-105">
+              <div className="h-40 sm:h-48 md:h-56 lg:h-64 flex items-end mb-2">
+                <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52">
+                  <Image
+                    src="/images/Jewpiter-grey.png"
+                    alt="Jewpiter"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Jewpiter</p>
             </div>
-            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center transition-all duration-300 hover:scale-105">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/Etheran-grey.png"
@@ -543,7 +545,7 @@ export default function HomePage() {
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Eteheran</p>
             </div>
-            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center transition-all duration-300 hover:scale-105">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/IsraelGPT.png"
