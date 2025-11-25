@@ -510,16 +510,28 @@ export default function HomePage() {
             Partners
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="flex flex-col items-center justify-center p-6 hover:opacity-80 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              </div>
               <p className="text-white text-sm sm:text-base font-medium">Goylana</p>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 hover:opacity-80 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              </div>
               <p className="text-white text-sm sm:text-base font-medium">Jewpiter</p>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 hover:opacity-80 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              </div>
               <p className="text-white text-sm sm:text-base font-medium">Eteheran</p>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 hover:opacity-80 transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              </div>
               <p className="text-white text-sm sm:text-base font-medium">IsraelGPT</p>
             </div>
           </div>
