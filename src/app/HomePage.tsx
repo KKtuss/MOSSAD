@@ -511,7 +511,7 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
                 <Image
                   src="/images/Goylana-grey.png"
                   alt="Goylana"
@@ -522,7 +522,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
                 <Image
                   src="/images/Jewpiter-grey.png"
                   alt="Jewpiter"
@@ -533,7 +533,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Jewpiter</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
                 <Image
                   src="/images/Etheran-grey.png"
                   alt="Eteheran"
@@ -544,7 +544,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Eteheran</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
                 <Image
                   src="/images/IsraelGPT.png"
                   alt="IsraelGPT"
