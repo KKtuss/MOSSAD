@@ -522,7 +522,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mb-2">
                 <Image
                   src="/images/Jewpiter-grey.png"
                   alt="Jewpiter"
