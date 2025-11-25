@@ -514,25 +514,25 @@ export default function HomePage() {
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
               </div>
-              <p className="text-white text-sm sm:text-base font-medium">GOYLANA</p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
               </div>
-              <p className="text-white text-sm sm:text-base font-medium">JEWPITER</p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Jewpiter</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
               </div>
-              <p className="text-white text-sm sm:text-base font-medium">ETEHERAN</p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Eteheran</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
                 <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
               </div>
-              <p className="text-white text-sm sm:text-base font-medium">ISRAELGPT</p>
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">IsraelGPT</p>
             </div>
           </div>
         </div>
