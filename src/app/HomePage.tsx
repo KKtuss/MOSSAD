@@ -506,12 +506,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
             Partners
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/Goylana-grey.png"
                   alt="Goylana"
@@ -522,7 +522,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/Jewpiter-grey.png"
                   alt="Jewpiter"
@@ -533,7 +533,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Jewpiter</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/Etheran-grey.png"
                   alt="Eteheran"
@@ -544,7 +544,7 @@ export default function HomePage() {
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Eteheran</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mb-2">
                 <Image
                   src="/images/IsraelGPT.png"
                   alt="IsraelGPT"
