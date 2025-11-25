@@ -511,26 +511,46 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+                <Image
+                  src="/images/Goylana-grey.png"
+                  alt="Goylana"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Goylana</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+                <Image
+                  src="/images/Jewpiter-grey.png"
+                  alt="Jewpiter"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Jewpiter</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+                <Image
+                  src="/images/Etheran-grey.png"
+                  alt="Eteheran"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">Eteheran</p>
             </div>
             <div className="flex flex-col items-center justify-center transition-all duration-300 hover:scale-105">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white/20 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-white text-xs sm:text-sm font-bold">Logo</span>
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+                <Image
+                  src="/images/IsraelGPT.png"
+                  alt="IsraelGPT"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <p className="text-white text-lg sm:text-xl md:text-2xl font-medium">IsraelGPT</p>
             </div>
