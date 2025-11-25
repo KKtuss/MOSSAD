@@ -16,7 +16,7 @@ export default function HomePage() {
   const [showIndicator, setShowIndicator] = useState(false);
   const [indicatorFading, setIndicatorFading] = useState(false);
   // Make hero section visible by default since it's always in view on load
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video", "image-left", "image-right", "partners"]));
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(["hero-text", "hero-video", "image-left", "image-right", "dark-section", "partners"]));
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -400,6 +400,31 @@ export default function HomePage() {
               <div className="text-xs sm:text-sm text-gray-600">Epstein Files Pages</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Dark Gradient Section */}
+      <section 
+        className={`relative py-8 sm:py-12 md:py-16 px-4 sm:px-6 overflow-hidden fade-in ${visibleSections.has("dark-section") ? "visible" : ""}`}
+        data-section-id="dark-section"
+        ref={(el: HTMLElement | null) => {
+          sectionRefs.current["dark-section"] = el;
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-transparent" />
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            Explore the Onchain World on MOSSAD
+          </h2>
+          <Image
+            src="/images/mossad-ico.png"
+            alt="Mossad emblem"
+            width={160}
+            height={160}
+            className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain transition-transform duration-500 hover:scale-110 hover:rotate-6"
+            priority
+          />
         </div>
       </section>
 
