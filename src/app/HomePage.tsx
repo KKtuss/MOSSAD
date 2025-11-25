@@ -497,7 +497,7 @@ export default function HomePage() {
 
       {/* Partners Section */}
       <section 
-        className={`relative py-8 sm:py-12 md:py-16 px-4 sm:px-6 overflow-hidden fade-in ${visibleSections.has("partners") ? "visible" : ""}`}
+        className={`relative pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 overflow-hidden fade-in ${visibleSections.has("partners") ? "visible" : ""}`}
         data-section-id="partners"
         ref={(el: HTMLElement | null) => {
           sectionRefs.current["partners"] = el;
@@ -506,7 +506,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#2a2a4e] to-[#1a1a2e]" />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-center">
             Partners
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 sm:gap-16 md:gap-24 lg:gap-32">
