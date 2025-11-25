@@ -34,6 +34,9 @@ const sebino = localFont({
 export const metadata: Metadata = {
   title: "MOSSAD - The High-Performance Hebrew-Market-Maker-Machine",
   description: "Mossad is the chosen, next-generation, debt-compatible ledger. We're delivering 10,000 TPS, sub-second finality, and a scalable, decentralized network.",
+  icons: {
+    icon: "/images/mossad-ico.png",
+  },
 };
 
 export default function RootLayout({
